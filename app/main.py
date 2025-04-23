@@ -13,9 +13,10 @@ class CarWashStation:
         self.count_of_ratings = count_of_ratings
 
 
-    def serve_cars(self, Car: type) -> float:
+    def serve_cars(self, list_cars :list[Car]) -> float:
+
         income = 0.0
-        for car in Car:
+        for car in list_cars:
             if car.clean_mark <= self.clean_power:
                 income += self.calculate_washing_price(car)
             else:
